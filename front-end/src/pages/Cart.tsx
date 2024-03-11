@@ -28,6 +28,7 @@ function Cart() {
         if (response.ok) {
           console.log("Welcome to cart");
           const data = await response.json();
+          console.log(data);
           // console.log(data.Products);
           setCartData(data);
         } else {

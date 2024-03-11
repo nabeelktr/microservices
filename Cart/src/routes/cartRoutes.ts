@@ -12,7 +12,7 @@ const repository = new CartRepository();
 const interactor = new CartInteractor(repository);
 const controller = new CartController(interactor);
 
-router.get("/")
+router.get("/", validateToken, controller.onGetCartProducts.bind(controller))
 router.post("/:productid", validateToken, controller.onCreateCart.bind(controller))
 // router.delete("/:productid")
 // router.delete('/checkout')

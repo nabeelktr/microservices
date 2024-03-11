@@ -15,4 +15,5 @@ router.get("/", validateToken, controller.onGetUser.bind(controller))
 router.post("/login",  controller.onLogin.bind(controller)) 
 
 
+
 export default router;

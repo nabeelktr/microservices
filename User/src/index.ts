@@ -24,6 +24,9 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use("/users", UserRouter);
+app.use("/test", (req, res) => {
+    res.send("Hello Nabeel")
+});
 
 
 

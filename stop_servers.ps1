@@ -1,0 +1,1 @@
+get-Process -Name "node" | Stop-process

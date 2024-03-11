@@ -4,10 +4,11 @@ import { connectDB } from './config/db';
 import {config} from "dotenv";
 import cors from 'cors'
 import morgan from 'morgan';
+import grpcServer from './config/grpc-server/product-server';
 
 config();
 connectDB()
-
+grpcServer();
 
 const app = express();
 const port = process.env.PORT || 3002;
@@ -20,6 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use("/products",ProductRouter);
+
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

@@ -16,12 +16,11 @@ export class CartController {
     onGetCartProducts = async ( req: Req, res:Response, next:NextFunction) => {
         try{
             const products = await this.interactor.getCart(req.user.id);
-            res.status(200).json({Products: products.product, total: products.total})
+            res.status(200).json({Products: products.products, total: products.total})
         }catch(err){
             next(err)
         }
     }
-
     onCreateCart = async(req: Req, res: Response, next: NextFunction) => {
         try{
             const cart = await this.interactor.createCart(req.user.id, req.params.productid)
@@ -30,4 +29,6 @@ export class CartController {
             next(err)
         }
     }
+
+    
 }
